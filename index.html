@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/style.css">
+
     <meta http-equiv="refresh" content="30" />
-    <meta name="color-scheme" content="dark">
-    <title>catholicoteca</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+
+    <title>Notredame Library</title>
 </head>
 
 <body>
@@ -21,39 +22,140 @@
             <li><a href='cadastro-login/login.html'>login </a></li>
         </ul>
     </nav>
-    <div class="header">
+    <div class="header" id="div1">
         <span class="tituloHeader">Una, Sancta, Catholica. </span>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt asperiores eveniet rerum, debitis
             voluptates et incidunt. Enim omnis, excepturi ipsam quam, harum, quaerat nam neque vel libero laborum
             beatae.z</p>
+        <div class="botoes">
+            <button>Livros</button><button>Cantos</button>
+        </div>
+
     </div>
-        <div class="header">
+
+
+
+    <div class="paragrafo" id="paragrafo1">
+        <div class="texto">
             <h2>Una, Sancta, Catholica. </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt asperiores eveniet rerum, debitis
-                voluptates et incidunt. Enim omnis, excepturi ipsam quam, harum, quaerat nam neque vel libero laborum
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt asperiores eveniet rerum,
+                debitis
+                voluptates et incidunt. Enim omnis, excepturi ipsam quam, harum, quaerat nam neque vel libero
+                laborum
                 beatae.z</p>
         </div>
-        <div class="header" id="apresentacao2">
-            <h2>Tradicionem. </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt asperiores eveniet rerum, debitis
-                voluptates et incidunt. Enim omnis, excepturi ipsam quam, harum, quaerat nam neque vel libero laborum
-                beatae.z</p>
+        <img src="https://cdn.discordapp.com/attachments/768246692884512768/929163931006697502/FDpBGqTWUAEDI02.jpeg.jpg"
+            alt="">
+    </div>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/0/375.png" id='play' class='botaoPlay' alt="">
+    <img src="https://cdn-icons-png.flaticon.com/512/0/375.png" id='play1' class='botaoPlay' alt="">
+    <div class="paragrafo" id="paragrafo2">
+
+        <div class="container">
+
+
+            <div class="imagens">
+                <img onmouseenter="apperPlay(1,play)" onmouseout="apperPlay(0,play)"
+                    src="https://catolicaweb.com.br/wp-content/uploads/2021/04/regina-coeli.jpg" alt="">
+                <div class="texto">
+                    <h2>Regina Caeli</h2>
+                    <p>Sua origem remonta o ano 590, quando Roma era devastada pelo Tibre, reduzida À fome e à peste. O
+                        papa São Gregório Magno ordenou uma Litania Septiforme, ou seja uma procissão geral do clero e
+                        da população romana, formada por sete cortejos que confluíram à Basílica Vaticana</p>
+
+                </div>
+            </div>
+
+            <div class="imagens">
+                <img onmouseenter="apperPlay(1,play1)" onmouseout="apperPlay(0,play1)"
+                    src="https://images.ctfassets.net/r3epego8cuq8/1L3WCmQi5ivjGzmHsRj358/5d4f0f14d20624d689cf4b0ed8568350/Saint_Thomas_Aquinas.png?w=1200&h=627&q=50&fit=fill"
+                    alt="">
+                <div class="texto">
+                    <h2>Adoro te devote</h2>
+                    <p>Sua origem remonta o ano 590, quando Roma era devastada pelo Tibre, reduzida À fome e à peste. O
+                        papa São Gregório Magno ordenou uma Litania Septiforme, ou seja uma procissão geral do clero e
+                        da população romana, formada por sete cortejos que confluíram à Basílica Vaticana</p>
+
+                </div>
+            </div>
         </div>
-        <div class="header">
-            <h2>Concilios </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt asperiores eveniet rerum, debitis
-                voluptates et incidunt. Enim omnis, excepturi ipsam quam, harum, quaerat nam neque vel libero laborum
-                beatae.z</p>
+    </div>
+    <div class="paragrafo" id="paragrafo3">
+        <span class="titulo">Obras Tomistas</span>
+        <div class="elementosp3">
+            <img
+                src="https://comshalom.org/wp-content/uploads/2015/01/Tom%C3%A1s-de-Aquino-por-Bernardino-Mei-Luis-Fernando-Serna-Covarrubias-1.jpg">
+            <div class="alinhaVertical"></div>
+            <div class="blocos">
+                <div class="texto">
+                    <p>
+                        "Três coisas são necessárias à salvação do homem, a saber: a ciência do que se há de crer; a
+                        ciência do que se há de querer; e a ciência do que se há de obrar"
+                      <br>  <span class="pequeno">São Tomás de Aquino</span>
+                    </p>
+                </div>
+                <div class="texto">
+
+                    <p>
+                        Dê-me, Senhor, agudeza para entender, capacidade para reter, método e faculdade para aprender, sutileza para interpretar, graça e abundância para falar, acerto ao começar, direção ao progredir e perfeição ao concluir...
+                      <br>  <span class="pequeno">São Tomás de Aquino</span>
+                    </p>
+                </div>
+                <div class="texto" id="textoVerdade">
+
+                    <p>
+                        Não se opor ao erro é aprová-lo, não defender a verdade é negá-la.
+                       <br> <span class="pequeno">São Tomás de Aquino</span>
+                    </p>
+                </div>
+            </div>
+
         </div>
-    
+    </div>
+
     <footer>
-        <ul>
-            <li>Contato</li>
-            <li>FAQ</li>
-            <li>Catálogo</li>
-            <li>Cantos (beta)</li>
-        </ul>
+        <div class="titulo">Notredame</div>
+        <div class="blocagemUl">
+            <ul>
+                <li>Contato</li>
+                <li>FAQ</li>
+                <li>Catálogo</li>
+                <li>Cantos (beta)</li>
+            </ul>  
+            <ul>
+                <li>Contato</li>
+                <li>FAQ</li>
+                <li>Catálogo</li>
+                <li>Cantos (beta)</li>
+            </ul> 
+            
+            <ul>
+                <li>Contato</li>
+                <li>FAQ</li>
+                <li>Catálogo</li>
+                <li>Cantos (beta)</li>
+            </ul> 
+            <ul>
+                <li>Contato</li>
+                <li>FAQ</li>
+                <li>Catálogo</li>
+                <li>Cantos (beta)</li>
+            </ul> 
+        </div>
+ 
     </footer>
 </body>
 
 </html>
+<script>
+    function apperPlay(num, nome) {
+        if (num == 1) {
+            nome.style.display = 'block';
+        }
+        else if (num == 0) {
+            nome.style.display = 'none';
+        }
+
+    }
+</script>
