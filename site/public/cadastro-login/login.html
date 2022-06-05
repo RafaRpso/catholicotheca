@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/footernav.css">
+    <script src="../assets/js/main.js"></script>
+
+    <title>Notredrame Library</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img style="width:4%; margin-left:2%;" id='imgLogo'  onclick=" location.href = '../index.html' "
+            src="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png" alt="">
+        <ul>
+            <li><a href='../livros.html'>Livros (beta) </a></li>
+            <li><a href='../cantos.html'>Cantos  </a></li>
+            <li id='cadastroLi'><a href='cadastro.html'>Cadastro </a></li>
+            <li id="usuarioNome"><a href='login.html'>Login </a></li>
+        </ul>
+    </nav>
+
+
+    <div class="paragrafo" id="formParagrafo">
+
+        <div class="texto textoCadastro">
+            <div class="itensInput">
+                <span class="titulo">Faça seu Login</span>
+                <div class="alinha">
+                </div>
+
+                <label class="tituloForm" for="">Email</label>
+                <input type="text" id="emailUsuario" class="inputTexto">
+                <label class="tituloForm" for="">Senha</label>
+                <input type="text"  id='senhaUsuario'class="inputTexto">
+                <button id="botaoInput" onclick='entrar()'>Login</button>
+
+
+            </div>
+
+
+            <div class="alinhaVertical" id="alinhaInput"></div>
+
+
+
+            <div class="imagemForm">
+                <img src="https://cdn.discordapp.com/attachments/827630969783320637/977266127833010246/unknown.png"
+                    id='imagemPessoa'alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="titulo">Notredame</div>
+        <div class="blocagemUl">
+            <ul>
+                <li>Contato</li>
+                <li>FAQ</li>
+                <li>Catálogo</li>
+                <li>Cantos (beta)</li>
+            </ul>
+            <ul>
+                <li>Contato</li>
+                <li>FAQ</li>
+                <li>Catálogo</li>
+                <li>Cantos (beta)</li>
+            </ul>
+
+            <ul>
+                <li>Contato</li>
+                <li>FAQ</li>
+                <li>Catálogo</li>
+                <li>Cantos (beta)</li>
+            </ul>
+            <ul>
+                <li>Contato</li>
+                <li>FAQ</li>
+                <li>Catálogo</li>
+                <li>Cantos (beta)</li>
+            </ul>
+        </div>
+
+    </footer>
+</body>
+
+</html>
+<script>
+function entrar() {
+
+
+    var emailVar = emailUsuario.value;
+    var senhaVar = senhaUsuario.value;
+
+    if (emailVar == "" || senhaVar == "") {
+        cardErro.style.display = "block"
+        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+        return false;
+    }
+    else {
+      
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+        
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+
+                sessionStorage.EMAIL_USUARIO = json.emailUsuario;
+                sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                sessionStorage.IDUSUARIO = json.idUsuario;
+
+                setTimeout( () =>  {
+                    window.location = "../index.html";
+                }, 1000); // apenas para exibir o loading
+
+                console.log(sessionStorage.NOME_USUARIO)
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+     
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+validaNome();
+</script>

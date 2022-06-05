@@ -5,25 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta http-equiv="refresh" content="30" />
     <link rel="stylesheet" href="assets/style/style.css">
-
+    <link rel="stylesheet" href="assets/style/footernav.css">
+    <script src="assets/js/main.js"></script>
     <title>Notredame Library</title>
 </head>
 
 <body>
     <nav class="navbar">
+        <img style="width:4%; margin-left:2%;" id='imgLogo'  onclick=" location.href = 'index.html' "
+            src="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png" alt="">
         <ul>
-            <li> <a href='index.html'>Logo </a></li>
-            <li> <a href='livros.html'>Catálogo </a></li>
-            <li><a href='cantos.html'>Cantos (beta) </a></li>
-            <li><a href='cadastro-login/cadastro.html'>Cadastro </a></li>
-            <li><a href='cadastro-login/login.html'>login </a></li>
+            <li><a href='livros.html'>Livros (beta) </a></li>
+            <li><a href='cantos.html'>Cantos  </a></li>
+            <li id='cadastroLi'><a href='cadastro-login/cadastro.html'>Cadastro </a></li>
+            <li id="usuarioNome"> <a href='cadastro-login/login.html'>Login </a></li>
         </ul>
     </nav>
+
+
     <div class="header" id="div1">
-        <span class="tituloHeader">Una, Sancta, Catholica. </span>
+        <span class="tituloHeader" id="tituloHeaderIndex">Una, Sancta, Catholica. </span>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt asperiores eveniet rerum, debitis
             voluptates et incidunt. Enim omnis, excepturi ipsam quam, harum, quaerat nam neque vel libero laborum
             beatae.z</p>
@@ -149,6 +151,7 @@
 
 </html>
 <script>
+
     function apperPlay(num, nome) {
         if (num == 1) {
             nome.style.display = 'block';
@@ -158,4 +161,6 @@
         }
 
     }
+
+   validaNome();
 </script>
