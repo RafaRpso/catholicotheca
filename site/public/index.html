@@ -10,7 +10,8 @@
     <script src="assets/js/main.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Notredame Library</title>
-    <link rel="icon" href="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png"  type="image/icon type">
+    <link rel="icon" href="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png"
+        type="image/icon type">
 </head>
 
 <body>
@@ -32,7 +33,8 @@
             voluptates et incidunt. Enim omnis, excepturi ipsam quam, harum, quaerat nam neque vel libero laborum
             beatae.z</p>
         <div class="botoes">
-            <button onclick="window.location = 'livros.html'">Livros</button><button onclick="window.location = 'cantos.html'">Cantos</button>
+            <button onclick="window.location = 'livros.html'">Livros</button><button
+                onclick="window.location = 'cantos.html'">Cantos</button>
         </div>
 
     </div>
@@ -57,33 +59,40 @@
     <div class="paragrafo" id="paragrafo2">
 
         <div class="container">
-
-
             <div class="imagens">
-                <img onmouseenter="apperPlay(1,play)" onmouseout="apperPlay(0,play)" onclick="tocarMusica('Regina')"
+                <img class="imagensMusica" onmouseenter="apperPlay(1,play)" id='img1regina'onmouseout="apperPlay(0,play)" onclick="tocarMusica('Regina')"
                     src="https://catolicaweb.com.br/wp-content/uploads/2021/04/regina-coeli.jpg" alt="">
+                <img class="imagensMusica" onmouseenter="apperPlay(1,play1)" onmouseout="apperPlay(0,play1) " onclick="tocarMusica('Adoro')"
+                    src="https://images.ctfassets.net/r3epego8cuq8/1L3WCmQi5ivjGzmHsRj358/5d4f0f14d20624d689cf4b0ed8568350/Saint_Thomas_Aquinas.png?w=1200&h=627&q=50&fit=fill"
+                    alt="">
+
+
+            </div>
+
+        </div>
+        <div class="paragrafo">
+            <div class="textos">
+
+                
                 <div class="texto">
                     <h2>Regina Caeli</h2>
                     <p>Sua origem remonta o ano 590, quando Roma era devastada pelo Tibre, reduzida À fome e à peste. O
                         papa São Gregório Magno ordenou uma Litania Septiforme, ou seja uma procissão geral do clero e
                         da população romana, formada por sete cortejos que confluíram à Basílica Vaticana</p>
-
                 </div>
-            </div>
-
-            <div class="imagens">
-                <img onmouseenter="apperPlay(1,play1)" onmouseout="apperPlay(0,play1) " onclick="tocarMusica('Adoro')"
-                    src="https://images.ctfassets.net/r3epego8cuq8/1L3WCmQi5ivjGzmHsRj358/5d4f0f14d20624d689cf4b0ed8568350/Saint_Thomas_Aquinas.png?w=1200&h=627&q=50&fit=fill"
-                    alt="">
                 <div class="texto">
                     <h2>Adoro te devote</h2>
-                    <p>Sua origem remonta o ano 590, quando Roma era devastada pelo Tibre, reduzida À fome e à peste. O
-                        papa São Gregório Magno ordenou uma Litania Septiforme, ou seja uma procissão geral do clero e
-                        da população romana, formada por sete cortejos que confluíram à Basílica Vaticana</p>
+                    <p>Adoro te devote é um dos cinco hinos que Santo Tomas de Aquino compôs em louvor de Jesus presente
+                        no Santíssimo Sacramento incluídos em el Missale Romanum de 1570 após o Concilio de Trento
+                        (1545–1563).
+
+                        As circunstâncias em que foram escritos são famosas. O Papa Urbano IV instituiu para a Igreja a
+                        festa solene de Corpus Christi</p>
 
                 </div>
             </div>
         </div>
+
     </div>
     <div class="paragrafo" id="paragrafo3">
         <span class="titulo">Obras Tomistas</span>
@@ -155,7 +164,7 @@
 
 </html>
 <script>
-   musicaTocando = true;
+    musicaTocando = true;
     function apperPlay(num, nome) {
         if (num == 1) {
             nome.style.display = 'block';
@@ -166,29 +175,29 @@
 
     }
     function tocarMusica(qualMusica) {
-     
+
         if (musicaTocando == true) {
-            switch(qualMusica){ 
-                case 'Regina': 
+            switch (qualMusica) {
+                case 'Regina':
                     var musica = new Audio('assets/music/Regina_Coeli.mp3')
                     musica.play();
                     setInterval(() => {
-            musica.pause()
-        },13500)
+                        musica.pause()
+                    }, 13500)
                     break;
                 case 'Adoro':
                     var musica = new Audio('assets/music/01-adoro-te-devote--st.m4a')
                     musica.play();
                     setInterval(() => {
-            musica.pause()
-        },13500)
+                        musica.pause()
+                    }, 13500)
                     break;
             }
 
-         
+
         }
 
-       
+
     }
     validaNome();
 </script>

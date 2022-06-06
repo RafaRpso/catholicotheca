@@ -32,9 +32,7 @@ function cadastrar(titulo,autor,anoCriacao,letraLatim,letraPortugues,capa,partit
      // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     // titulo, autor, ano criacao, letra latim, letra portugues, capa, partitura, todos com Inp no final
-    if ( likes == undefined) { 
-        likes = 'NULL'
-    }
+
     var instrucao = `
         INSERT INTO tbCanto  VALUES (NULL,'${titulo}', '${autor}', '${anoCriacao}', '${letraLatim}', '${letraPortugues}', '${partitura}', '${capa}','${idUsuario}','${likes});`;
     console.log("Executando a instrução SQL: \n" + instrucao);
