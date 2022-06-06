@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/style/style.css">
     <link rel="stylesheet" href="../assets/style/footernav.css">
     <script src="../assets/js/main.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Notredrame Library</title>
 </head>
 
@@ -108,8 +108,13 @@
         var anoCriacao = anoCriacaoInp.value;
         var linkDownload = linkDownloadInp.value;
         var urlCapa = capaInp.value;
-
+        var like = 0; 
         // Enviando o valor da nova input
+        if ( titulo == '' || autor == '' || linkDownload=='' || urlCapa =='') return Swal.fire('Campos vazios','Algum dos campos está vazio ','error')
+        
+        if(urlCapa.length > 200 ) return Swal.fire('Muitos caracteres','O campo URL está muito grande!', 'error')
+
+
 
         if (usernick == undefined) {
             alert('Por favor, faça seu login antes')
@@ -128,7 +133,8 @@
                     anoCriacaoServer: anoCriacao,
                     linkDownloadServer: linkDownload,
                     urlCapaServer: urlCapa,
-                    idUsuarioServer: sessionStorage.IDUSUARIO
+                    idUsuarioServer: sessionStorage.IDUSUARIO,
+                    likeServer:like
                 })
             }).then(function (resposta) {
 
@@ -137,7 +143,7 @@
                 if (resposta.ok) {
 
 
-                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Livros...");
+                    Swal.fire("Cadastro realizado com sucesso!"," Redirecionando para tela de Livros...","success");
 
                     setTimeout(() => {
                         window.location = "../livros.html";

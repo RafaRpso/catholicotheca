@@ -70,7 +70,7 @@ function cadastrar(req, res) {
     var linkPdf = req.body.linkDownloadServer;
     var urlCapa = req.body.urlCapaServer
     var idUsuario = req.body.idUsuarioServer;
-    var idLike = req.body.likeServer;
+    var like = req.body.likeServer;
     // Faça as validações dos valores
     if (titulo == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -82,7 +82,7 @@ function cadastrar(req, res) {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         //cadastrar(titulo,autor,anoCriacao,letraLatim,letraPortugues,capa,partitura)
-        livroModel.cadastrar(titulo,autor,anoCriacao,urlCapa,linkPdf,idUsuario)
+        livroModel.cadastrar(titulo,autor,anoCriacao,urlCapa,linkPdf,idUsuario,like)
             .then(
                 function (resultado) {
                     res.json(resultado);

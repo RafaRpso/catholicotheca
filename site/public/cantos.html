@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/footernav.css">
     <script src="assets/js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" href="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png"  type="image/icon type">
     <title>Notredame Library</title>
 </head>
 
@@ -25,7 +27,7 @@
 
     <div class="conteudo">
         <div class="paragrafo" id="paragrafoCantoCadastro">
-            <div class="texto">
+            <div class="texto textoBgWhite">
 
 
                 <div class="tituloCantoCard">
@@ -51,7 +53,9 @@
 
 
         </div>
-
+        <div class="alinhar">
+            <div class="alinhamento alinhamentoPaginas"></div>
+        </div>
         <div id="paragrafos">
             <div class="paragrafoCantos" id="paragrafoCanto0">
                 <!--  <div class="cardCatalogoCantos">
@@ -164,7 +168,7 @@
                     usuarioMaisCadastro = quemCadastrouMais(resposta)
 
                     usuarioMaisCadastroSpan.innerHTML = `<b>${usuarioMaisCadastro} </b>`;
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                   
                     let paragrafo = 0;
                     cantosPostados.innerHTML = `<b>${resposta.length}</b>`
 

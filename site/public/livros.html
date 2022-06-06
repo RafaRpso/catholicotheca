@@ -8,24 +8,28 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/footernav.css">
     <script src="assets/js/main.js"></script>
+    <link rel="icon" href="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png"  type="image/icon type">
+    
     <title>Notredame Library</title>
 </head>
 
 <body>
     <nav class="navbar">
-        <img style="width:4%; margin-left:2%;" id='imgLogo'  onclick=" location.href = 'index.html' "
+        <img style="width:4%; margin-left:2%;" id='imgLogo' onclick=" location.href = 'index.html' "
             src="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png" alt="">
         <ul>
             <li><a href='livros.html'>Livros (beta) </a></li>
-            <li><a href='cantos.html'>Cantos  </a></li>
-            <li id='cadastroLi'><a href='cadastro-login/cadastro.html'>Cadastro </a></li>
+            <li><a href='cantos.html'>Cantos </a></li>
+            <li id="cadastroLi"><a href='cadastro-login/cadastro.html'>Cadastro </a></li>
             <li id="usuarioNome"><a href='cadastro-login/login.html'>Login </a></li>
         </ul>
     </nav>
 
     <div class="conteudo">
+        
         <div class="paragrafo" id="paragrafoCantoCadastro">
-            <div class="texto">
+            
+            <div class="texto textoBgWhite">
 
                 <div class="tituloCantoCard">
 
@@ -39,7 +43,7 @@
                 </div>
                 <div class="estatistica">
                     <p>Usuário que mais cadastrou: <span id="usuarioMaisCadastroSpan"></span> <br>
-                   Cantos postados: <span id="cantosPostados"></span>
+                        Cantos postados: <span id="cantosPostados"></span>
 
                     </p>
                 </div>
@@ -50,7 +54,9 @@
 
 
         </div>
-        
+        <div class="alinhar">
+            <div class="alinhamento alinhamentoPaginas"></div>
+        </div>
         <div id="paragrafos">
             <div class="paragrafoCantos" id="paragrafoLivro0">
                 <!--  <div class="cardCatalogoCantos">
@@ -136,7 +142,8 @@
 
 </html>
 <script>
-    var like= 0 ; 
+        validaNome();
+    var like = 0;
     function apperPlay(num, nome) {
         if (num == 1) {
             nome.style.display = 'block';
@@ -161,10 +168,10 @@
     }
 
 
- 
 
-    function localizaId(id) { 
-        sessionStorage.IDCANTO = id; 
+
+    function localizaId(id) {
+        sessionStorage.IDCANTO = id;
     }
     function contarLike(id) {
         like++;
@@ -176,65 +183,57 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                idPostServer:id,
-                likeServer:like
+                idPostServer: id,
+                likeServer: like
             })
         }).then(function (resposta) {
             console.log(id)
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-              
-                like=0;
+
+                like = 0;
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            
+
         });
 
         return false;
     }
-    
-    
 
-     function maisUm(id,chave){
-    
-        if(chave==true  ){
-            document.getElementById("like"+id).addEventListener("click", () =>{
-                alert('Você deu like!')
-            })
-        }
-     }
+
 
 
     function atualizarFeed() {
         //aguardar();
-      
+
         //aguardar();
         fetch("/livro/listar").then(function (resposta) {
+           
             if (resposta.ok) {
-
+              
                 resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                   
                     let paragrafo = 0;
-                   var usuarioMaisCadastro = quemCadastrouMais(resposta)
-                   usuarioMaisCadastroSpan.innerHTML = `<b>${usuarioMaisCadastro} </b>`;
-                   cantosPostados.innerHTML = `<b>${resposta.length}</b>`
+                    var usuarioMaisCadastro = quemCadastrouMais(resposta)
+                    usuarioMaisCadastroSpan.innerHTML = `<b>${usuarioMaisCadastro} </b>`;
+                    cantosPostados.innerHTML = `<b>${resposta.length}</b>`
                     for (i = 0; i < resposta.length; i++) {
-                        if(resposta[i].urlCapa.indexOf('.jpg') == -1 && resposta[i].urlCapa.indexOf('.png') == -1 ){
-                           resposta[i].urlCapa = 'https://i.pinimg.com/564x/6f/8b/d5/6f8bd5ad80ca3cc9b3aeb7fe650a4f2b.jpg'
+                        if (resposta[i].urlCapa.indexOf('.jpg') == -1 && resposta[i].urlCapa.indexOf('.png') == -1) {
+                            resposta[i].urlCapa = 'https://i.pinimg.com/564x/6f/8b/d5/6f8bd5ad80ca3cc9b3aeb7fe650a4f2b.jpg'
                         }
                         if (i % 3 == 0) {
                             paragrafos.innerHTML += `<div class="paragrafoCantos" id='paragrafoLivro${paragrafo}' </div>`
-                                paragrafo++;
+                            paragrafo++;
                         }
-                   
-                        
-                        document.getElementById(`paragrafoLivro${paragrafo-1}`).innerHTML += `<div class="cardCatalogoCantos">
+
+
+                        document.getElementById(`paragrafoLivro${paragrafo - 1}`).innerHTML += `<div class="cardCatalogoCantos">
                                 <div class="tituloCardCantos">
-                                    <img id='like${resposta[i].idLivros}' onclick='contarLike(${resposta[i].idLivros}), maisUm(${resposta.idLivros},true)' class='imagemCoracaoLike' src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Heart_font_awesome.svg/1200px-Heart_font_awesome.svg.png'>
+                                    <img id='like${resposta[i].idLivros}' onclick='contarLike(${resposta[i].idLivros}), maisUm(${resposta.idLivros})' class='imagemCoracaoLike' src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Heart_font_awesome.svg/1200px-Heart_font_awesome.svg.png'>
                                     <span id='numLikes'> ${resposta[i].likesLivro} </span>
                                     <a href='cantoEscolhido.html' onclick='localizaId(${resposta[i].idLivros})' id='${resposta[i].idCantos}'> ${resposta[i].tituloLivro} </a>
                                     <div class="subtituloHeader">${resposta[i].autorLivro}</div>
@@ -247,10 +246,10 @@
                                 <button class='botoesLivros' onclick=" location.href = '${resposta[i].linkPdfLivro}'   "> Baixar Livro </button> 
                                 <span class='usuarioPostou'><h6> ${resposta[i].nomeUsuario} </h6></span>
                                 </div>`
-                   
+
 
                     }
-         
+
 
 
                 });
@@ -259,13 +258,13 @@
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+
         });
     }
-    atualizarFeed()
+    atualizarFeed();
 
     function testar() {
-        aguardar();
+
 
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
 
@@ -279,7 +278,7 @@
         return false;
     }
 
-    
 
-    validaNome();
+
+
 </script>

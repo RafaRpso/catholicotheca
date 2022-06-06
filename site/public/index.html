@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/footernav.css">
     <script src="assets/js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Notredame Library</title>
+    <link rel="icon" href="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png"  type="image/icon type">
 </head>
 
 <body>
     <nav class="navbar">
-        <img style="width:4%; margin-left:2%;" id='imgLogo'  onclick=" location.href = 'index.html' "
+        <img style="width:4%; margin-left:2%;" id='imgLogo' onclick=" location.href = 'index.html' "
             src="https://lareja.fsspx.org/sites/sspx/files/styles/colorbox-big/public/corazones_2.png" alt="">
         <ul>
             <li><a href='livros.html'>Livros (beta) </a></li>
-            <li><a href='cantos.html'>Cantos  </a></li>
+            <li><a href='cantos.html'>Cantos </a></li>
             <li id='cadastroLi'><a href='cadastro-login/cadastro.html'>Cadastro </a></li>
             <li id="usuarioNome"> <a href='cadastro-login/login.html'>Login </a></li>
         </ul>
@@ -30,7 +32,7 @@
             voluptates et incidunt. Enim omnis, excepturi ipsam quam, harum, quaerat nam neque vel libero laborum
             beatae.z</p>
         <div class="botoes">
-            <button>Livros</button><button>Cantos</button>
+            <button onclick="window.location = 'livros.html'">Livros</button><button onclick="window.location = 'cantos.html'">Cantos</button>
         </div>
 
     </div>
@@ -38,7 +40,7 @@
 
 
     <div class="paragrafo" id="paragrafo1">
-        <div class="texto">
+        <div class="texto textoBgWhite">
             <h2>Una, Sancta, Catholica. </h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt asperiores eveniet rerum,
                 debitis
@@ -58,7 +60,7 @@
 
 
             <div class="imagens">
-                <img onmouseenter="apperPlay(1,play)" onmouseout="apperPlay(0,play)"
+                <img onmouseenter="apperPlay(1,play)" onmouseout="apperPlay(0,play)" onclick="tocarMusica('Regina')"
                     src="https://catolicaweb.com.br/wp-content/uploads/2021/04/regina-coeli.jpg" alt="">
                 <div class="texto">
                     <h2>Regina Caeli</h2>
@@ -70,7 +72,7 @@
             </div>
 
             <div class="imagens">
-                <img onmouseenter="apperPlay(1,play1)" onmouseout="apperPlay(0,play1)"
+                <img onmouseenter="apperPlay(1,play1)" onmouseout="apperPlay(0,play1) " onclick="tocarMusica('Adoro')"
                     src="https://images.ctfassets.net/r3epego8cuq8/1L3WCmQi5ivjGzmHsRj358/5d4f0f14d20624d689cf4b0ed8568350/Saint_Thomas_Aquinas.png?w=1200&h=627&q=50&fit=fill"
                     alt="">
                 <div class="texto">
@@ -88,27 +90,29 @@
         <div class="elementosp3">
             <img
                 src="https://comshalom.org/wp-content/uploads/2015/01/Tom%C3%A1s-de-Aquino-por-Bernardino-Mei-Luis-Fernando-Serna-Covarrubias-1.jpg">
-            <div class="alinhaVertical"></div>
+            <div class="alinhaVertical "></div>
             <div class="blocos">
-                <div class="texto">
+                <div class="texto textoBgWhite">
                     <p>
                         "Três coisas são necessárias à salvação do homem, a saber: a ciência do que se há de crer; a
                         ciência do que se há de querer; e a ciência do que se há de obrar"
-                      <br>  <span class="pequeno">São Tomás de Aquino</span>
+                        <br> <span class="pequeno">São Tomás de Aquino</span>
                     </p>
                 </div>
-                <div class="texto">
+                <div class="texto textoBgWhite">
 
                     <p>
-                        Dê-me, Senhor, agudeza para entender, capacidade para reter, método e faculdade para aprender, sutileza para interpretar, graça e abundância para falar, acerto ao começar, direção ao progredir e perfeição ao concluir...
-                      <br>  <span class="pequeno">São Tomás de Aquino</span>
+                        Dê-me, Senhor, agudeza para entender, capacidade para reter, método e faculdade para aprender,
+                        sutileza para interpretar, graça e abundância para falar, acerto ao começar, direção ao
+                        progredir e perfeição ao concluir...
+                        <br> <span class="pequeno">São Tomás de Aquino</span>
                     </p>
                 </div>
-                <div class="texto" id="textoVerdade">
+                <div class="texto textoBgWhite" id="textoVerdade">
 
                     <p>
                         Não se opor ao erro é aprová-lo, não defender a verdade é negá-la.
-                       <br> <span class="pequeno">São Tomás de Aquino</span>
+                        <br> <span class="pequeno">São Tomás de Aquino</span>
                     </p>
                 </div>
             </div>
@@ -124,34 +128,34 @@
                 <li>FAQ</li>
                 <li>Catálogo</li>
                 <li>Cantos (beta)</li>
-            </ul>  
+            </ul>
             <ul>
                 <li>Contato</li>
                 <li>FAQ</li>
                 <li>Catálogo</li>
                 <li>Cantos (beta)</li>
-            </ul> 
-            
+            </ul>
+
             <ul>
                 <li>Contato</li>
                 <li>FAQ</li>
                 <li>Catálogo</li>
                 <li>Cantos (beta)</li>
-            </ul> 
+            </ul>
             <ul>
                 <li>Contato</li>
                 <li>FAQ</li>
                 <li>Catálogo</li>
                 <li>Cantos (beta)</li>
-            </ul> 
+            </ul>
         </div>
- 
+
     </footer>
 </body>
 
 </html>
 <script>
-
+   musicaTocando = true;
     function apperPlay(num, nome) {
         if (num == 1) {
             nome.style.display = 'block';
@@ -161,6 +165,30 @@
         }
 
     }
+    function tocarMusica(qualMusica) {
+     
+        if (musicaTocando == true) {
+            switch(qualMusica){ 
+                case 'Regina': 
+                    var musica = new Audio('assets/music/Regina_Coeli.mp3')
+                    musica.play();
+                    setInterval(() => {
+            musica.pause()
+        },13500)
+                    break;
+                case 'Adoro':
+                    var musica = new Audio('assets/music/01-adoro-te-devote--st.m4a')
+                    musica.play();
+                    setInterval(() => {
+            musica.pause()
+        },13500)
+                    break;
+            }
 
-   validaNome();
+         
+        }
+
+       
+    }
+    validaNome();
 </script>

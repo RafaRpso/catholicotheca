@@ -51,15 +51,15 @@ INSERT INTO tbCanto VALUES (NULL, 'Agnus Dei','Igreja Católica Romana', '', 'Ag
 
 
 
-INSERT INTO tbLivro VALUES (NULL, 'Suma Theologica','São Tomás de Aquino', '','https://fasbam.edu.br/wp-content/uploads/2019/10/Apoteose-de-Santo-Toma%CC%81s.jpg','https://sumateologica.files.wordpress.com/2017/04/suma-teolc3b3gica.pdf',1,null);
+INSERT INTO tbLivro VALUES (NULL, 'Suma Theologica','São Tomás de Aquino', '','https://fasbam.edu.br/wp-content/uploads/2019/10/Apoteose-de-Santo-Toma%CC%81s.jpg','https://sumateologica.files.wordpress.com/2017/04/suma-teolc3b3gica.pdf',1,0);
 
 
-INSERT INTO tbLivro VALUES (NULL, 'Os Princípios da Realidade Natural','São Tomás de Aquino', '','https://img2.docero.com.br/image/l/vvcvs1.png','https://app.box.com/s/yvqxbi8hamxyd0yyeo9m4d333erwqu4o',NULL); 
+INSERT INTO tbLivro VALUES (NULL, 'Os Princípios da Realidade Natural','São Tomás de Aquino', '','https://img2.docero.com.br/image/l/vvcvs1.png','https://app.box.com/s/yvqxbi8hamxyd0yyeo9m4d333erwqu4o',0); 
 
-INSERT INTO tbLivro VALUES (NULL, 'Ensayos sobre Pedagogía','São Tomás de Aquino', '1949','https://lh3.googleusercontent.com/-nDPzlb4yVxU/YVhE2EQioBI/AAAAAAAADPE/1ofdkPD7NuMDJES4I4iLWmKMZ7VLdghYgCLcBGAsYHQ/w480-h640/image.png','https://filedu.files.wordpress.com/2010/03/ensayos-sobre-pedagogia-alberto-garcia-vieyrao-p.pdf',1,null);
+INSERT INTO tbLivro VALUES (NULL, 'Ensayos sobre Pedagogía','São Tomás de Aquino', '1949','https://lh3.googleusercontent.com/-nDPzlb4yVxU/YVhE2EQioBI/AAAAAAAADPE/1ofdkPD7NuMDJES4I4iLWmKMZ7VLdghYgCLcBGAsYHQ/w480-h640/image.png','https://filedu.files.wordpress.com/2010/03/ensayos-sobre-pedagogia-alberto-garcia-vieyrao-p.pdf',1,0);
 
 
-INSERT INTO tbLivro VALUES (NULL, 'O Mandamento da Caridade','São Tomás de Aquino', '','https://2.bp.blogspot.com/-WQUhJxp75mc/TitMRQvhZlI/AAAAAAAAEDM/QFuELbWwG7w/s400/254405_2084469316224_1379856701_32468505_8356085_n.jpg','https://onedrive.live.com/redir?resid=C66F182E3FF9E7AA!281&authkey=!AKvNYPqVfeIX-44&ithint=file%2cdocx',2,null); 
+INSERT INTO tbLivro VALUES (NULL, 'O Mandamento da Caridade','São Tomás de Aquino', '','https://2.bp.blogspot.com/-WQUhJxp75mc/TitMRQvhZlI/AAAAAAAAEDM/QFuELbWwG7w/s400/254405_2084469316224_1379856701_32468505_8356085_n.jpg','https://onedrive.live.com/redir?resid=C66F182E3FF9E7AA!281&authkey=!AKvNYPqVfeIX-44&ithint=file%2cdocx',2,0); 
 
 
 -- qual usuário enviou qual livro
@@ -73,3 +73,23 @@ select idCantos, tituloCanto, idUsuario, nomeUsuario FROM tbUsuario JOIN tbCanto
 select count(idLivros) FROM tbUsuario JOIN tbLivro ON idUsuario = fkUsuario AND fkUsuario = 2; --ao inves de 2, id usuario  
 -- QUANTIDADE DE CANTOS UPADOS
 select count(idCantos) FROM tbUsuario JOIN tbCanto ON idUsuario = fkUsuario AND fkUsuario = 2; --ao inves de 2, id usuario  
+
+INSERT INTO tbUsuario (nomeUsuario, emailUsuario, senhaUsuario) VALUES ('Kaline', 'kaline@email.com', 'rafael01');
+
+INSERT INTO tbUsuario (nomeUsuario,emailusuario,senhaUsuario) VALUES ('Brandão','brandao@email.com','rafael01');
+
+  INSERT INTO tbUsuario (nomeUsuario, emailUsuario, senhaUsuario) VALUES ('Eduardo Oliveira', 'renmmo@email.com', 'rafael01')
+
+INSERT INTO tbLivro VALUES (NULL,'Manual da Missa e da Confissão', 'Pe. José Ignacio Roquette', '','https://i.pinimg.com/736x/7f/65/5a/7f655a68402ea904be3e9571348c814b.jpg' ,'https://drive.google.com/drive/folders/1fU-I2L0KsJ_TkmFefEun9FPz-8TPr4Yf' ,'3','0');
+
+INSERT INTO tbLivro VALUES (NULL,'Meditações para Todos os Dias do Ano', 'R. P. Bronchain, Redentorista', '','https://i.pinimg.com/736x/f4/65/9f/f4659f027908ea447dfefc65b5bf937d.jpg' ,'https://drive.google.com/file/d/1ZcrnzpMoIWTBhR2IKA50a2kemtV-MMlT/view' ,'4','0');
+
+INSERT INTO tbLivro VALUES (NULL,'Novo Manual das Mães Christãs', 'Revmo. P. Theodoro Ratisbonna', '','https://i.pinimg.com/736x/43/88/8c/43888cdc9f8f0e3a91b0f2e0f39abe3b.jpg' ,'https://drive.google.com/file/d/1-5o7RgwNQMJq5wxzFFOqm_zyxXrO2njm/view?usp=sharing' ,'4','0');
+
+INSERT INTO tbLivro VALUES (NULL,'Ave Maria,  Devocionário Escolhido', 'Igreja Católica', '','https://media.discordapp.net/attachments/827630969783320637/983156496915382312/unknown.png?width=258&height=457' ,'https://www.mediafire.com/file/y1ezqmb850o4liq/Ave+Maria_Devocion%C3%A1rio+Escolhido_Editora+Ambrosiana_completo.pdf/file' ,'5','0');
+
+INSERT INTO tbLivro VALUES (NULL,'São Gabriel, Maomé e o Islamismo', 'Pe. Júlio Maria de Lombaerde', '','https://kdialfatihhome.files.wordpress.com/2019/01/b911f1b82660727daf431c6f91435da7.jpg?w=451' ,'https://www.mediafire.com/file/ulpvf9lxq6j3c3z/Pe_Julio_Ma_de_Lombaerde_S%E3o_Gabriel%2C_Maom%E9_e_o_Islamismo.pdf/file' ,'4','0');
+
+INSERT INTO tbLivro VALUES (NULL,'Meditações Sacerdotais', 'R. P. Chaignon, S. J.', '','https://i.pinimg.com/564x/b2/11/9b/b2119b40a7b3032551f6f97c11cdaa9a.jpg' ,'https://drive.google.com/file/d/1ZFD2hUwoa0GdETtFZHXOV5ZYLL1rGHj-/view' ,'3','0');
+
+INSERT INTO tbLivro VALUES (NULL,'Missa Est', 'Daniel-Rops', '','https://1.bp.blogspot.com/-5bg6u3mQnaU/UkSqnN_fTQI/AAAAAAAAKU4/jKwV5o5TwmQ/s640/MissaEst_AC.bmp' ,'https://www.mediafire.com/download_repair.php?qkey=b8101ni6lw556dv&origin=server_error&template=unselected&did=ARCHIVE057' ,'3','0');

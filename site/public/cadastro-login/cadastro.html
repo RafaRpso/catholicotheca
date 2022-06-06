@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/style/style.css">
     <link rel="stylesheet" href="../assets/style/footernav.css">
     <script src="../assets/js/main.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Notredrame Library</title>
 </head>
 
@@ -38,7 +38,7 @@
                 <label class="tituloForm" for="">Email</label>
                 <input type="text" id="email_input">
                 <label class="tituloForm" for="">Senha</label>
-                <input type="text" id="senha_input">
+                <input type="password" id="senha_input">
                 <span class="tituloForm">Confirmação da Senha:</span>
                 <input id="confirmacao_senha_input" type="password" placeholder="******">
 
@@ -106,7 +106,16 @@
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
      
+        if (nomeVar == '' || emailVar == '' || senhaVar=='' || confirmacaoSenhaVar=='') return Swal.fire('Ocorreu um erro', 'Existe algum campo que está vazio','error')
 
+        if(nomeVar == Number(nomeVar)) return Swal.fire('Erro no nome','Insira apenas letras no nome','error') 
+
+        if( (emailVar.indexOf('@')==-1 || emailVar.indexOf('.com')==-1)) return Swal.fire('Email inválido','Insira o email corretamente','error')
+        
+        if(senhaVar.length < 8 ) return Swal.fire('Senha muito fraca','Insira uma senha com mais de 8 ou mais caracteres','error')
+
+    
+        
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -127,7 +136,7 @@
             if (resposta.ok) {
               
 
-                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...") ;
+                Swal.fire("Cadastro realizado com sucesso!"," Redirecionando para tela de Login...","success") ;
 
                 setTimeout(() => {
                     window.location = "login.html";

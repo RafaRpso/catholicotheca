@@ -23,6 +23,8 @@ function cadastrar(titulo,autor,anoCriacao, urlCapa, link,idUsuario,likes) {
      // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     // titulo, autor, ano criacao, letra latim, letra portugues, capa, partitura, todos com Inp no final
+
+
     var instrucao = `
         INSERT INTO tbLivro VALUES (NULL,'${titulo}', '${autor}', '${anoCriacao}','${urlCapa}' ,'${link}' ,'${idUsuario}','${likes}');`;
     console.log("Executando a instrução SQL: \n" + instrucao);

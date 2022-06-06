@@ -1,6 +1,8 @@
 
 const idUsuarioStorage = sessionStorage.IDUSUARIO; 
 var  usernick  = sessionStorage.NOME_USUARIO; 
+console.log(usernick)
+
 if(usernick!= undefined){ 
     var nickBonito =usernick[0].toUpperCase() + usernick.replace(usernick[0],'').toLowerCase(); 
 

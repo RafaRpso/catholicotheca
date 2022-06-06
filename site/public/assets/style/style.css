@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f8f4d8;
+    background-color: #ffeec7;
     filter: sepia(20%);
 }
 #imgLogo{
@@ -64,21 +64,24 @@ body {
 }
 
 .cardCatalogoCantos {
-    border: 2px solid black;
-    width: 25%;
+    border-radius: 15px;
+    border: 2px solid #86634b;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     transition:200ms;
+    background-color: white;
 }
 .cardCatalogoCantos:hover{
     transform:scale(1.1);
-    transition: 600ms;
-    box-shadow: 12px 12px 12px rgb(166, 166, 166) ;
+    transition: 400ms;
+    box-shadow: 2px 40px 20px rgba(94, 10, 95, 0.464) ;
 }
 .cardCatalogoCantos img {
     height: 50vh;
+
 }
 
 .cardCatalogoCantos a {
@@ -143,7 +146,7 @@ body {
 
 .elementosp3 {
     display: flex;
-
+    
     justify-content: space-around;
     align-items: center;
 }
@@ -158,7 +161,9 @@ body {
     width: 40%;
     padding: 5px;
 }
-
+.textoBgWhite{
+    background-color: white;
+}
 .texto p {
     padding: 10px;
 }
@@ -196,7 +201,7 @@ body {
     align-items: center;
     padding-top: 4%;
     padding-bottom: 8%;
-
+    background-color: white;
     justify-content: space-between;
     flex-direction: column;
 }
@@ -261,6 +266,7 @@ body {
 }
 #textoCadastroCantos{
     height: 100%;
+    
 }
 .textoCadastro {
     display: flex;
@@ -354,6 +360,7 @@ body {
 }
 
 .cantoCard {
+    background-color: white;
     display: flex;
     border: 1px solid black;
     flex-direction: column;
@@ -401,7 +408,9 @@ body {
 .capaCantoImagem {
     height: 40vh;
     width:80%;
-    padding: 20px;
+    border-radius: 70px;
+    
+    padding: 40px;
 }
 
 .cantosPagina {
@@ -435,6 +444,7 @@ body {
 .usuarioPostou{
     font-size: 12px;
     font-weight: 300;
+    margin-bottom: 5%;
 }
 .botoesLivros{
     background-color:black;
@@ -465,4 +475,11 @@ body {
 }
 .imagemCoracaoLike{
     height:20px !important;
+}
+
+.alinhamentoPaginas{
+    margin-top:30px;
+    margin-bottom:30px;
+    border-bottom: 4px solid #684b36 !important;
+    border-radius: 2px;
 }
